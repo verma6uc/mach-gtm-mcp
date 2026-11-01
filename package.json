@@ -1,0 +1,29 @@
+{
+  "name": "mach-gtm-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Mach GTM — AI-powered B2B outbound sales platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mcp",
+    "sales",
+    "b2b",
+    "outbound",
+    "ai",
+    "sdr",
+    "prospecting",
+    "mach-gtm"
+  ],
+  "author": "Vaibhav Verma <vaibhav@machgtm.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "type": "module",
+  "bin": {
+    "mach-gtm-mcp": "./index.js"
+  }
+}
