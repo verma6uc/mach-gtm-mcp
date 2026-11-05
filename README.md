@@ -1,23 +1,25 @@
 # Mach GTM MCP Server
 
-Model Context Protocol (MCP) server for [Mach GTM](https://machgtm.com) — the AI-powered B2B outbound sales platform for software teams.
+A small, free Model Context Protocol (MCP) server with five outbound sales helpers. It runs inside Claude Desktop, Claude Code, Cursor and other MCP clients.
 
-Connect Claude, ChatGPT, Cursor and other AI agents directly to your outbound sales workflow.
+It is a starter kit from the team behind [Mach](https://machgtm.com). The tools shape what you give them into an ICP, a message, a research checklist, a lead score or a sequence. They do not search the web or look anything up, so every fact in the output is one you supplied.
 
 ## Tools
 
-| Tool | Description |
+| Tool | What it does |
 |------|-------------|
-| `build_icp` | Define a structured Ideal Customer Profile from your company description and best customers |
-| `draft_outreach` | Draft personalised cold email or LinkedIn messages grounded in prospect signals |
-| `research_prospect` | Generate a research checklist and fit assessment for any B2B prospect |
-| `score_lead` | Score a lead against your ICP (0-100) with reasons for/against |
-| `build_sequence` | Build a multi-touch outbound sequence with copy and timing for each touchpoint |
+| `build_icp` | Turns your company description and best customers into a structured Ideal Customer Profile |
+| `draft_outreach` | Drafts a cold email or LinkedIn message from a buying signal and a proof point you provide |
+| `research_prospect` | Gives a research checklist and the questions to answer before you reach out |
+| `score_lead` | Scores a lead 0-100 against your ICP with a simple, readable formula, plus reasons for and against |
+| `build_sequence` | Lays out a multi-touch sequence with timing for each step |
 
 ## Install
 
+Run it straight from GitHub (needs Node.js 18 or later):
+
 ```bash
-npx mach-gtm-mcp
+npx -y github:verma6uc/mach-gtm-mcp
 ```
 
 Or clone and run locally:
@@ -29,7 +31,7 @@ npm install
 node index.js
 ```
 
-## Claude Desktop Configuration
+## Claude Desktop configuration
 
 Add to `claude_desktop_config.json`:
 
@@ -38,13 +40,21 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "mach-gtm": {
       "command": "npx",
-      "args": ["mach-gtm-mcp"]
+      "args": ["-y", "github:verma6uc/mach-gtm-mcp"]
     }
   }
 }
 ```
 
-## Example Usage
+## Claude Code
+
+```bash
+claude mcp add mach-gtm -- npx -y github:verma6uc/mach-gtm-mcp
+```
+
+## Example usage
+
+The companies and results below are made up.
 
 **Build an ICP:**
 ```
@@ -65,13 +75,19 @@ your_offering: "AI code review that catches issues before they hit production"
 proof_point: "helped DataCo reduce production bugs by 60% in 90 days"
 ```
 
-## About Mach GTM
+Read every draft before you send it, and check that each fact in it is true.
 
-[Mach GTM](https://machgtm.com) is an AI-powered outbound sales platform for B2B software teams — SaaS, IT services, AI services and enterprise software companies selling to the US.
+## What this server does not do
 
-It builds a Brain from your website and case studies, finds leads showing buying signals, researches each prospect with source-verified facts, and writes personalised outreach. Manages replies across email, LinkedIn and WhatsApp. Every message requires human approval.
+- It does not find leads, research companies or verify facts.
+- It does not send email or LinkedIn messages.
+- It does not connect to a Mach account.
 
-**Early access:** $1,000/seat/month — [machgtm.com](https://machgtm.com)
+## About Mach
+
+[Mach](https://machgtm.com) is an outbound sales workspace for small B2B software and services teams selling to the US. It reads your website and case studies to learn what you sell, researches accounts and people with a source for every fact, and drafts messages a person approves before anything is sent. Email, LinkedIn and WhatsApp replies land in one inbox by company.
+
+Mach is in early access: [machgtm.com](https://machgtm.com).
 
 ## License
 
