@@ -1,7 +1,7 @@
 {
   "name": "mach-gtm-mcp",
   "version": "1.0.0",
-  "description": "MCP server for Mach GTM — AI-powered B2B outbound sales platform",
+  "description": "Free starter-kit MCP server with five outbound sales helpers (ICP, outreach draft, research checklist, lead score, sequence). Uses only what you give it; does not search the web or call Mach.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
