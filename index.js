@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Mach GTM MCP Server
- * Connects AI agents to Mach GTM — the AI-powered B2B outbound sales platform.
+ * A starter kit of five outbound sales helpers from the team behind Mach. It uses only what you give it: it does not search the web or call Mach.
  * https://machgtm.com
  */
 
