@@ -2,17 +2,17 @@
 
 A small, free Model Context Protocol (MCP) server with five outbound sales helpers. It runs inside Claude Desktop, Claude Code, Cursor and other MCP clients.
 
-It is a starter kit from the team behind [Mach](https://machgtm.com). The tools shape what you give them into an ICP, a message, a research checklist, a lead score or a sequence. They do not search the web or look anything up, so every fact in the output is one you supplied.
+It is a starter kit from the team behind [Mach](https://machgtm.com). The tools shape what you give them into an ICP, a message, a research checklist, a lead score or a sequence. The handlers return templates and rules from supplied inputs. Inspect their fixed assumptions and remove unsupported fallback proof before using an output.
 
 ## Tools
 
 | Tool | What it does |
 |------|-------------|
-| `build_icp` | Turns your company description and best customers into a structured Ideal Customer Profile |
+| `build_icp` | Returns a largely fixed profile with best-customers and deal-size inputs copied into it. The handler accepts but does not use company_description. |
 | `draft_outreach` | Drafts a cold email or LinkedIn message from a buying signal and a proof point you provide |
 | `research_prospect` | Gives a research checklist and the questions to answer before you reach out |
 | `score_lead` | Scores a lead 0-100 against your ICP with a simple, readable formula, plus reasons for and against |
-| `build_sequence` | Lays out a multi-touch sequence with timing for each step |
+| `build_sequence` | Slices a fixed schedule of up to eight touches. Check the returned length and timing. |
 
 ## Install
 
@@ -83,11 +83,25 @@ Read every draft before you send it, and check that each fact in it is true.
 - It does not send email or LinkedIn messages.
 - It does not connect to a Mach account.
 
+## Hosted Mach workspace connection
+
+To use your signed-in Mach workspace from an assistant, follow the [hosted connector guide](https://machgtm.com/help/connect-ai-assistant). The remote endpoint is https://machgtm.com/mcp.
+
+The hosted connector checks the connected member's workspace permissions. Research actions return a plan and maximum cost for confirmation.
+
+Read the [implementation and capability guide](https://machgtm.com/blog/mcp-server-sales-prospecting). Use the [known-account connection checklist](https://machgtm.com/resources/mach-mcp-connection-checklist.md) to record the connection and outputs you observe.
+
+## Inspect the local output
+
+The local score starts at 50 and applies the rules in index.js, clamped to 0 through 100. Its confidence label follows the supplied inputs. The score has no measured calibration against meetings or purchases.
+
+The outreach handler inserts generic proof when proof_point is omitted. Supply verified proof or remove that fallback before using a message.
+
 ## About Mach
 
-[Mach](https://machgtm.com) is an outbound sales workspace for small B2B software and services teams selling to the US. It reads your website and case studies to learn what you sell, researches accounts and people with a source for every fact, and drafts messages a person approves before anything is sent. Email, LinkedIn and WhatsApp replies land in one inbox by company.
+[Mach](https://machgtm.com) is an outbound sales workspace for small B2B software and services teams selling to the US. It reads your website and case studies to learn what you sell, researches accounts and people with a source for every fact, and drafts outreach under configurable playbook review modes. Confirm the active review mode and permissions before starting. Email, LinkedIn and WhatsApp replies land in one inbox by company.
 
-Mach is in early access: [machgtm.com](https://machgtm.com).
+Mach works with design partners and early adopters. [Current terms](https://machgtm.com/pricing) are available from the team.
 
 ## License
 
