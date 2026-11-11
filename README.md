@@ -1,4 +1,4 @@
-# Mach GTM MCP Server
+# MachGTM MCP Server
 
 A small, free Model Context Protocol (MCP) server with five outbound sales helpers. It runs inside Claude Desktop, Claude Code, Cursor and other MCP clients.
 
@@ -99,7 +99,7 @@ The outreach handler inserts generic proof when proof_point is omitted. Supply v
 
 ## About Mach
 
-[Mach](https://machgtm.com) is an outbound sales workspace for small B2B software and services teams selling to the US. It reads your website and case studies to learn what you sell, researches accounts and people with a source for every fact, and drafts outreach under configurable playbook review modes. Confirm the active review mode and permissions before starting. Email, LinkedIn and WhatsApp replies land in one inbox by company.
+[Mach](https://machgtm.com) is an outbound sales workspace for teams selling software and software services. It reads your website and case studies to learn what you sell, supports sourced account and person research, and drafts outreach under configurable playbook review modes. Confirm the active review mode and permissions before starting. Email, LinkedIn and WhatsApp replies land in one inbox by company.
 
 Mach works with design partners and early adopters. [Current terms](https://machgtm.com/pricing) are available from the team.
 
