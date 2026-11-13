@@ -97,6 +97,10 @@ The local score starts at 50 and applies the rules in index.js, clamped to 0 thr
 
 The outreach handler inserts generic proof when proof_point is omitted. Supply verified proof or remove that fallback before using a message.
 
+## Review changes to a handler
+
+Before changing a handler, write down the intended behaviour and check its failure paths. The [AI code-review checklist](https://codeintelligently.com/blog/how-to-review-ai-generated-code) gives a sequence for reviewing requirements, edge cases, security and test quality. The checklist is part of CodeIntelligently, another project by this maintainer.
+
 ## About Mach
 
 [Mach](https://machgtm.com) is an outbound sales workspace for teams selling software and software services. It reads your website and case studies to learn what you sell, supports sourced account and person research, and drafts outreach under configurable playbook review modes. Confirm the active review mode and permissions before starting. Email, LinkedIn and WhatsApp replies land in one inbox by company.
